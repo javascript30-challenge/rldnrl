@@ -16,3 +16,7 @@ function removeTransition(e: TransitionEvent) {
   if (e.propertyName !== 'transform') return;
   (e.target as HTMLDivElement).classList.remove('playing');
 }
+
+const keys = Array.from(document.querySelectorAll('.key'));
+keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+window.addEventListener("keydown", playSound)
