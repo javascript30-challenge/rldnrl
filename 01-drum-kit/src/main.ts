@@ -11,3 +11,8 @@ function playSound(e: KeyboardEvent) {
     key.classList.remove('playing')
   }, 700)
 }
+
+function removeTransition(e: TransitionEvent) {
+  if (e.propertyName !== 'transform') return;
+  (e.target as HTMLDivElement).classList.remove('playing');
+}
